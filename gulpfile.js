@@ -11,17 +11,13 @@ var pkg = require('./package.json'),
 
 
 // JavaScript
-/*gulp.task('js', function () {
+gulp.task('js', function () {
 	gulp.src('./src/js/main.js')
 		.pipe(browserify({ debug: true }))
 		.pipe(uglify())
 		.pipe(rename('bundle.js'))
 		.pipe(gulp.dest('./dist/js/'));
 });
-*/
-
-
-
 
 
 //Global SASS
@@ -59,18 +55,11 @@ gulp.task('css', ['globalSass', 'pageSass'], function() {
 });
 
 
+gulp.task('default', ['css', 'js']);
 
-
-
-//gulp.task('default', ['css', 'js', 'html']);
-
-
-/*gulp.task('watch', function(){
-
+gulp.task('watch', function(){
 	gulp.watch('src/css/*.css', ['css']);
 	gulp.watch('src/js/*.js', ['js']);
-	gulp.watch('src/index.html', ['html']);
-	
-})
-*/
+});
+
 
